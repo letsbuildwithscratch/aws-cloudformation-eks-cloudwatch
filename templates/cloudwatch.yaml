@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Enable CloudWatch logging for EKS
+
+Resources:
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /aws/eks/cluster-logs
+      RetentionInDays: 14
+      Tags:
+        - Key: Application
+          Value: EKS
